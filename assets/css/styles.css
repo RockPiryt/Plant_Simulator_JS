@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  #garden {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .plant {
+    margin: 10px;
+    position: relative;
+  }
+  .plant img {
+    transition: all 0.3s ease-in-out;
+    max-height: 60vh;
+  }
+  .dead {
+    filter: grayscale(100%) sepia(100%) hue-rotate(-50deg);
+  }
+  .controls {
+    margin: 10px;
+  }

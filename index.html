@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plant Simulator</title>
+   <!-- Bootstrap CSS v5.3.2 -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+   rel="stylesheet"
+   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+   crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+</head>
+<body>
+  <h1>Plant Growth Simulator</h1>
+  
+
+  <div id="plant-selection">
+    <h3>Select a plant to start:</h3>
+    <button onclick="selectPlant('assets/img/87300_flower_flowerpot_icon.png')">🌼 Flower</button>
+    <button onclick="selectPlant('assets/img/87299_cacti_flowerpot_icon.png')">🌵 Cactus</button>
+    <button onclick="selectPlant('assets/img/87168_flowerpot_plant_icon.png')">🌱 Plant</button>
+  </div>
+
+  <div class="controls">
+    <button onclick="waterPlants()">💧 Water</button>
+    <button onclick="fertilize()">🌿 Fertilize</button>
+    <button onclick="revivePlants()">🚑 Revive</button>
+    <button onclick="cutPlant()">🪓 Cut</button>
+  </div>
+
+  <div id="garden"></div>
+
+  <script>
+    let garden = [];
+    let maxPlants = 10; // 5 per bed, 2 beds
+
+    function selectPlant(imageSrc) {
+      if (garden.length >= maxPlants) {
+        alert("Maximum number of plants reached.");
+        return;
+      }
+      const plant = {
+        imageSrc: imageSrc,
+        waterLevel: 0,
+        size: 100,
+        isDead: false,
+      };
+      garden.push(plant);
+      renderGarden();
+      document.getElementById('plant-selection').style.display = 'none';
+    }
+
+    function renderGarden() {
+      const gardenDiv = document.getElementById('garden');
+      gardenDiv.innerHTML = '';
+      garden.forEach((plant, index) => {
+        const div = document.createElement('div');
+        div.className = 'plant';
+        const img = document.createElement('img');
+        img.src = plant.imageSrc;
+        img.style.height = plant.size + 'px';
+        if (plant.isDead) img.classList.add('dead');
+        div.appendChild(img);
+        const label = document.createElement('div');
+        label.innerText = 'Plant #' + (index + 1);
+        div.appendChild(label);
+        gardenDiv.appendChild(div);
+      });
+    }
+
+    function waterPlants() {
+      if (garden.length === 0) return;
+      garden.forEach((plant) => {
+        if (plant.isDead) return;
+        plant.waterLevel++;
+        plant.size += 10;
+        if (plant.waterLevel > 10) {
+          plant.isDead = true;
+          plant.size = 100;
+        } else if (plant.size > window.innerHeight * 0.6) {
+          plant.size = window.innerHeight * 0.6;
+          alert("A plant has reached its maximum height!");
+        }
+      });
+      renderGarden();
+    }
+
+    function fertilize() {
+      if (garden.length >= maxPlants) {
+        alert("Cannot fertilize more. Maximum plants reached.");
+        return;
+      }
+      const firstPlant = garden[0];
+      if (firstPlant) {
+        selectPlant(firstPlant.imageSrc);
+      }
+    }
+
+    function revivePlants() {
+      garden.forEach((plant) => {
+        if (plant.isDead) {
+          plant.isDead = false;
+          plant.waterLevel = 0;
+          plant.size = 100;
+        }
+      });
+      renderGarden();
+    }
+
+    function cutPlant() {
+      if (garden.length === 0) return;
+      const index = prompt("Enter the number of the plant to cut (1 to " + garden.length + "):");
+      const idx = parseInt(index) - 1;
+      if (isNaN(idx) || idx < 0 || idx >= garden.length) {
+        alert("Invalid plant number.");
+        return;
+      }
+      if (garden.length === 1) {
+        garden[0].waterLevel = 0;
+        garden[0].isDead = false;
+        garden[0].size = 100;
+      } else {
+        garden.splice(idx, 1);
+      }
+      renderGarden();
+    }
+  </script>
+</body>
+</html>
