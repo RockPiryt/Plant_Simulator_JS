@@ -58,7 +58,13 @@
           <button onclick="cutPlant()" title="Cutting"class="btn btn-light p-2"><img src="assets/img/87237_snipping_icon.png" alt="Cutting" width="50" height="50"></button>
       </div>
       <!-- Shelves -->
-      <div class="col-md-8" id="gamefield"><img src="assets/img/2247cut.jpg" alt="shelves" class="img-fluid"></div>
+      <div class="col-md-8" id="gamefield">
+        <div id="shelves-background">
+          <img src="assets/img/2247cut.jpg" alt="shelves" class="img-fluid">
+          <div id="garden" class="d-flex flex-wrap justify-content-center align-items-end"></div>
+        </div>
+      </div>
+      
     </div>
     
   </div>
@@ -84,5 +90,7 @@
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
     crossorigin="anonymous"
   ></script>
+  <script src="assets/js/plantScript.js"></script>
+
 </body>
 </html>
