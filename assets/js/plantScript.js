@@ -19,39 +19,66 @@ function selectPlant(imageSrc) {
 }
 
 function renderGarden() {
-    const gardenDiv = document.getElementById('garden');
-    gardenDiv.innerHTML = '';
+    const gardenRow = document.getElementById('garden-row');
+    gardenRow.innerHTML = '';
+  
     garden.forEach((plant, index) => {
-    const div = document.createElement('div');
-    div.className = 'plant';
-    const img = document.createElement('img');
-    img.src = plant.imageSrc;
-    img.style.height = plant.size + 'px';
-    if (plant.isDead) img.classList.add('dead');
-    div.appendChild(img);
-    const label = document.createElement('div');
-    label.innerText = 'Plant #' + (index + 1);
-    div.appendChild(label);
-    gardenDiv.appendChild(div);
+      const col = document.createElement('div');
+      col.className = 'col-6 col-md-3 plant-container mb-4';
+  
+      const div = document.createElement('div');
+      div.className = 'plant';
+  
+      const img = document.createElement('img');
+      img.src = plant.imageSrc;
+      img.style.height = plant.size + 'px';
+      if (plant.isDead) img.classList.add('dead');
+      div.appendChild(img);
+  
+      const label = document.createElement('div');
+      label.innerText = 'Plant #' + (index + 1);
+      div.appendChild(label);
+  
+      col.appendChild(div);
+      gardenRow.appendChild(col);
     });
-}
+  }
+  
 
-function waterPlants() {
-    if (garden.length === 0) return;
-    garden.forEach((plant) => {
-    if (plant.isDead) return;
+  function waterPlants() {
+    if (garden.length === 0) {
+      alert("There are no plants to water.");
+      return;
+    }
+  
+    const index = prompt("Enter the number of the plant to water (1 to " + garden.length + "):");
+    const idx = parseInt(index) - 1;
+  
+    if (isNaN(idx) || idx < 0 || idx >= garden.length) {
+      alert("Invalid plant number.");
+      return;
+    }
+  
+    const plant = garden[idx];
+    if (plant.isDead) {
+      alert("This plant is dead and cannot be watered.");
+      return;
+    }
+  
     plant.waterLevel++;
     plant.size += 10;
+  
     if (plant.waterLevel > 10) {
-        plant.isDead = true;
-        plant.size = 100;
+      plant.isDead = true;
+      plant.size = 100;
     } else if (plant.size > window.innerHeight * 0.6) {
-        plant.size = window.innerHeight * 0.6;
-        alert("A plant has reached its maximum height!");
+      plant.size = window.innerHeight * 0.6;
+      alert("Plant #" + (idx + 1) + " has reached its maximum height!");
     }
-    });
+  
     renderGarden();
-}
+  }
+  
 
 function fertilize() {
     if (garden.length >= maxPlants) {
