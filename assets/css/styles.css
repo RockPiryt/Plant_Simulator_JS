@@ -172,6 +172,6 @@ footer {
 }
 
 .plant img.dead {
-  filter: grayscale(100%) brightness(0.5);
+  filter: brightness(0.6) sepia(100%) hue-rotate(20deg);
   border: 2px solid brown;
 }

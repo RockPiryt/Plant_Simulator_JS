@@ -1,6 +1,6 @@
 
 let garden = [];
-let maxPlants = 10; // 5 per bed, 2 beds
+let maxPlants = 12; // 4 per row, 3 rows
 
 function selectPlant(imageSrc) {
     if (garden.length >= maxPlants) {
@@ -68,7 +68,7 @@ function renderGarden() {
     plant.waterLevel++;
     plant.size += 10;
   
-    if (plant.waterLevel > 10) {
+    if (plant.waterLevel > 5) { // ← tu zmieniamy limit na 5
       plant.isDead = true;
       plant.size = 100;
     } else if (plant.size > window.innerHeight * 0.6) {
@@ -78,6 +78,7 @@ function renderGarden() {
   
     renderGarden();
   }
+  
   
 
 function fertilize() {
