@@ -17,35 +17,53 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
         crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mystery+Quest&family=Rubik+Microbe&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Górne menu wyboru roślin -->
-  <div id="plant-selection">
-    <h5 class="me-3 mb-0">Choose plant:</h5>
-    <button onclick="selectPlant('assets/img/87300_flower_flowerpot_icon.png')">
-      <img src="assets/img/87300_flower_flowerpot_icon.png" alt="Flower" width="50" height="50">
-    </button>
-    <button onclick="selectPlant('assets/img/87299_cacti_flowerpot_icon.png')">
-      <img src="assets/img/87299_cacti_flowerpot_icon.png" alt="Cactus" width="50" height="50">
-    </button>
-    <button onclick="selectPlant('assets/img/87168_flowerpot_plant_icon.png')">
-      <img src="assets/img/87168_flowerpot_plant_icon.png" alt="Plant" width="50" height="50">
-    </button>
-  </div>
 
-  <!-- Lewy pasek boczny z przyciskami -->
-  <div id="sidebar-controls">
-    <button onclick="waterPlants()" title="Watering"><img src="assets/img/87243_watercan_icon.png" alt="Watering" width="50" height="50"></button>
-    <button onclick="fertilize()" title="Fertilizing"><img src="assets/img/87195_gardening_icon.png" alt="Fertilizing" width="50" height="50"></button>
-    <button onclick="revivePlants()" title="Reviving"><img src="assets/img/87195_gardening_icon.png" alt="Fertilizing" width="50" height="50"></button>
-    <button onclick="cutPlant()" title="Cutting">🪓</button>
+  <div class="container">
+    <div class="row" id="menu">
+      <div class="col-md-4 text-center mystery-quest-regular" id="logo">Plant Simulator</div>
+      <div class="col-md-8" id="plain"></div>
+    </div>
+    <!-- Flower menu -->
+    <div class="row justify-content-center align-items-center g-2" id="flowers-row">
+      <div class="row">
+        <h5 class="me-3 mb-0">Choose plant:</h5>
+      </div>
+      <div class="col-md-8 offset-md-2 text-center" id="flowers">
+        <button onclick="selectPlant('assets/img/87300_flower_flowerpot_icon.png')">
+          <img src="assets/img/87300_flower_flowerpot_icon.png" alt="Flower">
+        </button>
+        <button onclick="selectPlant('assets/img/87299_cacti_flowerpot_icon.png')">
+          <img src="assets/img/87299_cacti_flowerpot_icon.png" alt="Cactus">
+        </button>
+        <button onclick="selectPlant('assets/img/87168_flowerpot_plant_icon.png')">
+          <img src="assets/img/87168_flowerpot_plant_icon.png" alt="Plant">
+        </button>
+      </div>
+    </div>
+    
+    <!-- Actions -->
+    <div class="row">
+      <div class="col-md-2 d-flex flex-column align-items-center gap-3" id="actions">
+          <button onclick="waterPlants()" title="Watering" class="btn btn-light p-2"><img src="assets/img/87243_watercan_icon.png" alt="Watering" width="50" height="50"></button>
+          <button onclick="fertilize()" title="Fertilizing"class="btn btn-light p-2"><img src="assets/img/87161_flower_seed_icon.png" alt="Fertilizing" width="50" height="50"></button>
+          <button onclick="revivePlants()" title="Reviving"class="btn btn-light p-2"><img src="assets/img/87296_flower_pink_icon.png" alt="Reviving" width="50" height="50"></button>
+          <button onclick="cutPlant()" title="Cutting"class="btn btn-light p-2"><img src="assets/img/87237_snipping_icon.png" alt="Cutting" width="50" height="50"></button>
+      </div>
+      <!-- Shelves -->
+      <div class="col-md-10" id="gamefield"><img src="assets/img/2247cut.jpg" alt="shelves" class="img-fluid"></div>
+    </div>
+    
   </div>
-
-  <!-- Shelves -->
-  <div id="shelves">
-    <img src="assets/img/2247.jpg" alt="shelves" class="img-fluid">
-  </div>
+  
 
   <!-- Footer -->
   <footer>
