@@ -39,6 +39,7 @@ function renderGarden() {
     div.appendChild(img);
 
     const label = document.createElement('div');
+    label.className = 'londrina-sketch-regular';
     label.innerText = 'Plant #' + (index + 1);
     div.appendChild(label);
 
