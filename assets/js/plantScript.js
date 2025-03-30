@@ -19,32 +19,34 @@ function selectPlant(imageSrc) {
 }
 
 function renderGarden() {
-    const gardenRow = document.getElementById('garden-row');
-    gardenRow.innerHTML = '';
-  
-    garden.forEach((plant, index) => {
-      const col = document.createElement('div');
-      col.className = 'col-6 col-md-3 plant-container mb-4';
-  
-      const div = document.createElement('div');
-      div.className = 'plant';
-  
-      const img = document.createElement('img');
-      img.src = plant.imageSrc;
-      img.style.height = plant.size + 'px';
-      if (plant.isDead) img.classList.add('dead');
-      div.appendChild(img);
-  
-      const label = document.createElement('div');
-      label.innerText = 'Plant #' + (index + 1);
-      div.appendChild(label);
-  
-      col.appendChild(div);
-      gardenRow.appendChild(col);
-    });
-  }
-  
+  const gardenRow = document.getElementById('garden-row');
+  gardenRow.innerHTML = '';
 
+  garden.forEach((plant, index) => {
+    const col = document.createElement('div');
+    col.className = 'col-6 col-md-3 plant-container mb-4';
+    
+    const rowNum = Math.floor(index / 4); 
+    col.classList.add(`shelf-row-${rowNum}`);
+
+    const div = document.createElement('div');
+    div.className = 'plant';
+
+    const img = document.createElement('img');
+    img.src = plant.imageSrc;
+    img.style.height = plant.size + 'px';
+    if (plant.isDead) img.classList.add('dead');
+    div.appendChild(img);
+
+    const label = document.createElement('div');
+    label.innerText = 'Plant #' + (index + 1);
+    div.appendChild(label);
+
+    col.appendChild(div);
+    gardenRow.appendChild(col);
+  });
+}
+  
   function waterPlants() {
     if (garden.length === 0) {
       alert("There are no plants to water.");
