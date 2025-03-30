@@ -37,25 +37,63 @@
         <h5 class="me-3 mb-0" id="flowers-title">Choose plant:</h5>
       </div>
       <div class="col-md-8 offset-md-2 text-center" id="flowers">
-        <button onclick="selectPlant('assets/img/87300_flower_flowerpot_icon.png')">
-          <img src="assets/img/87300_flower_flowerpot_icon.png" alt="Flower">
-        </button>
-        <button onclick="selectPlant('assets/img/87299_cacti_flowerpot_icon.png')">
-          <img src="assets/img/87299_cacti_flowerpot_icon.png" alt="Cactus">
-        </button>
-        <button onclick="selectPlant('assets/img/87168_flowerpot_plant_icon.png')">
-          <img src="assets/img/87168_flowerpot_plant_icon2.png" alt="Plant">
-        </button>
+        <div class="col-md-8 offset-md-2 text-center d-flex justify-content-center gap-4" id="flowers">
+          <div class="text-center">
+            <button onclick="selectPlant('assets/img/87300_flower_flowerpot_icon.png')" class="btn btn-light p-2">
+              <img src="assets/img/87300_flower_flowerpot_icon.png" alt="Flower" width="80" height="80">
+            </button>
+            <div class="butterfly-kids mt-1">Flower</div>
+          </div>
+        
+          <div class="text-center">
+            <button onclick="selectPlant('assets/img/87299_cacti_flowerpot_icon.png')" class="btn btn-light p-2">
+              <img src="assets/img/87299_cacti_flowerpot_icon.png" alt="Cactus" width="80" height="80">
+            </button>
+            <div class="butterfly-kids mt-1">Cactus</div>
+          </div>
+        
+          <div class="text-center">
+            <button onclick="selectPlant('assets/img/87168_flowerpot_plant_icon.png')" class="btn btn-light p-2">
+              <img src="assets/img/87168_flowerpot_plant_icon2.png" alt="Plant" width="80" height="80">
+            </button>
+            <div class="butterfly-kids mt-1">Plant</div>
+          </div>
+        </div>
+        
       </div>
     </div>
     
     <!-- Actions -->
     <div class="row">
       <div class="col-md-2 d-flex flex-column align-items-center gap-3" id="actions">
-          <button onclick="waterPlants()" title="Watering" class="btn btn-light p-2"><img src="assets/img/87243_watercan_icon.png" alt="Watering" width="50" height="50"></button>
-          <button onclick="fertilize()" title="Fertilizing"class="btn btn-light p-2"><img src="assets/img/87161_flower_seed_icon.png" alt="Fertilizing" width="50" height="50"></button>
-          <button onclick="revivePlants()" title="Reviving"class="btn btn-light p-2"><img src="assets/img/87296_flower_pink_icon.png" alt="Reviving" width="50" height="50"></button>
-          <button onclick="cutPlant()" title="Cutting"class="btn btn-light p-2"><img src="assets/img/87237_snipping_icon.png" alt="Cutting" width="50" height="50"></button>
+        <div class="text-center">
+          <button onclick="waterPlants()" title="Watering" class="btn btn-light p-2">
+            <img src="assets/img/87243_watercan_icon.png" alt="Watering" width="50" height="50">
+          </button>
+          <div class="action-label butterfly-kids mt-1">Water</div>
+        </div>
+        
+        <div class="text-center">
+          <button onclick="fertilize()" title="Fertilizing" class="btn btn-light p-2">
+            <img src="assets/img/87161_flower_seed_icon.png" alt="Fertilizing" width="50" height="50">
+          </button>
+          <div class="action-label butterfly-kids mt-1">Fertilize</div>
+        </div>
+        
+        <div class="text-center">
+          <button onclick="revivePlants()" title="Reviving" class="btn btn-light p-2">
+            <img src="assets/img/87296_flower_pink_icon.png" alt="Reviving" width="50" height="50">
+          </button>
+          <div class="action-label butterfly-kids mt-1">Revive</div>
+        </div>
+        
+        <div class="text-center">
+          <button onclick="cutPlant()" title="Cutting" class="btn btn-light p-2">
+            <img src="assets/img/87237_snipping_icon.png" alt="Cutting" width="50" height="50">
+          </button>
+          <div class="action-label butterfly-kids mt-1">Cut</div>
+        </div>
+        
       </div>
       <!-- Shelves -->
       <div class="col-md-8" id="gamefield">

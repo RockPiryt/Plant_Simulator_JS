@@ -140,6 +140,18 @@ footer {
   font-family: "Butterfly Kids", cursive;
   font-weight: 400;
   font-style: normal;
+  font-size: 1.2rem;
+  color: #4b4b4b;
+}
+
+.butterfly-kids {
+  font-family: 'Butterfly Kids', cursive;
+  font-size: 1.8rem;
+  color: #4b4b4b;
+}
+
+.action-label {
+  line-height: 1;
 }
 
 #shelves-background {
