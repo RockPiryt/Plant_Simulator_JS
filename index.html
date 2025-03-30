@@ -1,36 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Plant Simulator</title>
-   <!-- Bootstrap CSS v5.3.2 -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
-   rel="stylesheet"
-   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
-   crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+  <title>PlantSimulator</title>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="plant simulator">
+  <meta name="description" content="plant simulator">
+  <meta name="author" content="Paulina Kimak">
+
+  <!-- Bootstrap CSS v5.3.2 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+        crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 </head>
+
 <body>
-  <h1>Plant Growth Simulator</h1>
-  
-
+  <!-- Górne menu wyboru roślin -->
   <div id="plant-selection">
-    <h3>Select a plant to start:</h3>
-    <button onclick="selectPlant('assets/img/87300_flower_flowerpot_icon.png')">🌼 Flower</button>
-    <button onclick="selectPlant('assets/img/87299_cacti_flowerpot_icon.png')">🌵 Cactus</button>
-    <button onclick="selectPlant('assets/img/87168_flowerpot_plant_icon.png')">🌱 Plant</button>
+    <h5 class="me-3 mb-0">Choose plant:</h5>
+    <button onclick="selectPlant('assets/img/87300_flower_flowerpot_icon.png')">
+      <img src="assets/img/87300_flower_flowerpot_icon.png" alt="Flower" width="50" height="50">
+    </button>
+    <button onclick="selectPlant('assets/img/87299_cacti_flowerpot_icon.png')">
+      <img src="assets/img/87299_cacti_flowerpot_icon.png" alt="Cactus" width="50" height="50">
+    </button>
+    <button onclick="selectPlant('assets/img/87168_flowerpot_plant_icon.png')">
+      <img src="assets/img/87168_flowerpot_plant_icon.png" alt="Plant" width="50" height="50">
+    </button>
   </div>
 
-  <div class="controls">
-    <button onclick="waterPlants()">💧 Water</button>
-    <button onclick="fertilize()">🌿 Fertilize</button>
-    <button onclick="revivePlants()">🚑 Revive</button>
-    <button onclick="cutPlant()">🪓 Cut</button>
+  <!-- Lewy pasek boczny z przyciskami -->
+  <div id="sidebar-controls">
+    <button onclick="waterPlants()" title="Watering"><img src="assets/img/87243_watercan_icon.png" alt="Watering" width="50" height="50"></button>
+    <button onclick="fertilize()" title="Fertilizing"><img src="assets/img/87195_gardening_icon.png" alt="Fertilizing" width="50" height="50"></button>
+    <button onclick="revivePlants()" title="Reviving"><img src="assets/img/87195_gardening_icon.png" alt="Fertilizing" width="50" height="50"></button>
+    <button onclick="cutPlant()" title="Cutting">🪓</button>
   </div>
 
-  <div id="garden"></div>
+  <!-- Shelves -->
+  <div id="shelves">
+    <img src="assets/img/2247.jpg" alt="shelves" class="img-fluid">
+  </div>
 
-  <script src="assets/js/plantSciprt.js"></script>
+  <!-- Footer -->
+  <footer>
+    <details>
+      <summary>&copy; All rights reserved 2025</summary>
+      <p>Autor: Paulina Kimak</p>
+    </details>
+  </footer>
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"
+  ></script>
 </body>
 </html>
