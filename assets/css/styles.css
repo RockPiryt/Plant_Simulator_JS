@@ -101,9 +101,10 @@
 }
 
 #menu #logo {
-  font-size: 2em;
+  font-size: 3em;
   color: #728736;
   text-align: center;
+  font-weight: 500;
   flex: 1;
 }
 
@@ -216,7 +217,7 @@ footer {
 }
 
 .shelf-row-1 {
-  margin-top: -80px; 
+  margin-top: -120px; 
 }
 
 .shelf-row-2 {

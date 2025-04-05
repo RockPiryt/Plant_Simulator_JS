@@ -25,9 +25,13 @@ function renderGarden() {
   garden.forEach((plant, index) => {
     const col = document.createElement('div');
     col.className = 'col-6 col-md-3 plant-container mb-4';
-    
-    const rowNum = Math.floor(index / 4); 
+
+    const rowNum = Math.floor(index / 4);
     col.classList.add(`shelf-row-${rowNum}`);
+
+    if (rowNum === 1 && garden.length <= 8) {
+      col.style.marginTop = '-200px';
+}
 
     const div = document.createElement('div');
     div.className = 'plant';
@@ -71,7 +75,7 @@ function renderGarden() {
     plant.waterLevel++;
     plant.size += 10;
   
-    if (plant.waterLevel > 5) { // ← tu zmieniamy limit na 5
+    if (plant.waterLevel > 5) { 
       plant.isDead = true;
       plant.size = 100;
     } else if (plant.size > window.innerHeight * 0.6) {
