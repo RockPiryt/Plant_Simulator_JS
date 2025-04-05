@@ -26,7 +26,7 @@
 
 <body>
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row" id="menu">
       <div class="col-md-4 text-center mystery-quest-regular" id="logo">Plant Simulator</div>
       <div class="col-md-8" id="plain"></div>
@@ -64,41 +64,42 @@
     </div>
     
     <!-- Actions -->
-    <div class="row">
+    <div class="d-flex justify-content-center align-items-start flex-wrap gap-4 my-4">
       <div class="col-md-2 d-flex flex-column align-items-center gap-3" id="actions">
         <div class="text-center">
           <button onclick="waterPlants()" title="Watering" class="btn btn-light p-2">
-            <img src="assets/img/87243_watercan_icon.png" alt="Watering" width="50" height="50">
+            <img src="assets/img/87243_watercan_icon.png" alt="Watering">
           </button>
           <div class="action-label butterfly-kids mt-1">Water</div>
         </div>
         
         <div class="text-center">
           <button onclick="fertilize()" title="Fertilizing" class="btn btn-light p-2">
-            <img src="assets/img/87161_flower_seed_icon.png" alt="Fertilizing" width="50" height="50">
+            <img src="assets/img/87161_flower_seed_icon.png" alt="Fertilizing">
           </button>
           <div class="action-label butterfly-kids mt-1">Fertilize</div>
         </div>
         
         <div class="text-center">
           <button onclick="revivePlants()" title="Reviving" class="btn btn-light p-2">
-            <img src="assets/img/87296_flower_pink_icon.png" alt="Reviving" width="50" height="50">
+            <img src="assets/img/87296_flower_pink_icon.png" alt="Reviving">
           </button>
           <div class="action-label butterfly-kids mt-1">Revive</div>
         </div>
         
         <div class="text-center">
           <button onclick="cutPlant()" title="Cutting" class="btn btn-light p-2">
-            <img src="assets/img/87237_snipping_icon.png" alt="Cutting" width="50" height="50">
+            <img src="assets/img/87237_snipping_icon.png" alt="Cutting">
           </button>
           <div class="action-label butterfly-kids mt-1">Cut</div>
         </div>
         
       </div>
       <!-- Shelves -->
-      <div class="col-md-8" id="gamefield">
+      <div class="col-md-5" id="gamefield">
         <div id="shelves-background" class="position-relative">
           <img src="assets/img/2247cut.jpg" alt="shelves" class="img-fluid w-100">
+          <a href="http://www.freepik.com">Shelves Photo: Designed by upklyak / Freepik</a>
           <div id="garden" class="position-absolute top-0 start-0 w-100 h-100 p-3">
             <div class="container h-100">
               <div class="row h-100 align-items-start" id="garden-row">
@@ -116,10 +117,7 @@
 
   <!-- Footer -->
   <footer>
-    <details>
-      <summary>&copy; All rights reserved 2025</summary>
-      <p>Autor: Paulina Kimak</p>
-    </details>
+      <p>&copy; All rights reserved 2025 | Autor: Paulina Kimak</p>
   </footer>
 
   <!-- Bootstrap JavaScript Libraries -->
